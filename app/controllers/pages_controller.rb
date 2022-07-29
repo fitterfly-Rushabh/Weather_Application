@@ -1,8 +1,5 @@
 class PagesController < ApplicationController
     def index
-    end
-
-    def data
         url = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly?city=#{params[:query]}"
 
         headers = {
@@ -11,5 +8,9 @@ class PagesController < ApplicationController
         }
 
         @response = HTTParty.get(url, :headers => headers)
+    end
+
+    def data
+        
     end
 end
